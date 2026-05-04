@@ -114,7 +114,7 @@ export default function BirthdayMessage({ onComplete }) {
             }`}
           >
             <p className="text-base md:text-xl text-white leading-relaxed">
-              To the most amazing man in my life, Happy Birthday, my
+              To the most amazing woman in my life, Happy Birthday, my
               love. Every moment with you feels like a beautiful dream I never
               want to wake up from. Thank you for filling my days with warmth,
               smiles, and love in ways words can’t fully describe. I pray for
