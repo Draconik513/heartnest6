@@ -117,11 +117,11 @@ export default function BirthdayMessage({ onComplete }) {
               To the most amazing woman in my life, Happy Birthday, my
               love. Every moment with you feels like a beautiful dream I never
               want to wake up from. Thank you for filling my days with warmth,
-              smiles, and love in ways words can’t fully describe. I pray for
+              smiles, and love in ways words can't fully describe. I pray for
               your happiness, health, and success in everything you do. You
               deserve all the love in the universe—and my heart will always
               choose you, today and every day. I love you more than words can
-              ever express. Love uu, sayang ❤️
+              ever express. Love uu, honey❤️
             </p>
           </div>
         )}
