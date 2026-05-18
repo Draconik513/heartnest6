@@ -5,24 +5,24 @@ import { useState } from "react";
 const songs = [
   {
     id: 1,
-    title: "Aku Jeje",
-    artist: "Aramsa",
+    title: "Risk It All",
+    artist: "Bruno Mars",
     embedUrl:
-      "https://open.spotify.com/embed/track/2CYhIqqgKseczNNzdUtenI?utm_source=generator",
+      "https://open.spotify.com/embed/track/5y2ijHECwFYWqcAHKTZgzD?utm_source=generator",
   },
   {
     id: 2,
-    title: "Saturn",
-    artist: "SZA",
+    title: "My All",
+    artist: "Mariah Carey",
     embedUrl:
-      "https://open.spotify.com/embed/track/1bjeWoagtHmUKputLVyDxQ?utm_source=generator",
+      "https://open.spotify.com/embed/track/3RSpK5Y0y5tl25qvssrwJ6?utm_source=generator",
   },
   {
     id: 3,
-    title: "Birds of a Feather",
-    artist: "Billie Eilish",
+    title: "Mencintaimu",
+    artist: "Mahalini",
     embedUrl:
-      "https://open.spotify.com/embed/track/6dOtVTDdiauQNBQEDOtlAB?utm_source=generator",
+      "https://open.spotify.com/embed/track/2gsRMFzelZuRQo8r11RsLr?utm_source=generator",
   },
 ];
 

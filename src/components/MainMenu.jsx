@@ -19,7 +19,7 @@ const RelationshipTimer = () => {
   });
 
   useEffect(() => {
-    const startDate = new Date('2024-06-29');
+    const startDate = new Date('2024-12-12T00:00:00');
     const updateTimer = () => {
       const now = new Date();
       const diff = now - startDate;
@@ -161,25 +161,25 @@ export default function MainMenu({ currentPage, setCurrentPage }) {
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Special Dates</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>First Meet: June 24, 2024</li>
-                        <li>First Date: June 29, 2024</li>
-                        <li>Anniversary: July 27, 2026</li>
+                        <li>First Meet: November 8, 2024</li>
+                        <li>First Date: December 10, 2024</li>
+                        <li>Anniversary: December 12, 2024</li>
                       </ul>
                     </div>
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Our Places</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>Favorite Cafe: Baked</li>
-                        <li>Favorite Park: Kebun Raya Bogor</li>
-                        <li>Favorite Restaurant: Baked</li>
+                        <li>Favorite Cafe: Kopi Kenangan</li>
+                        <li>Favorite Park: -</li>
+                        <li>Favorite Restaurant: Ayce Sushi</li>
                       </ul>
                     </div>
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Memories</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>Trips Together: 10</li>
-                        <li>Movies Watched: 1</li>
-                        <li>Songs Shared: 50</li>
+                        <li>Trips Together: 5 cities</li>
+                        <li>Movies Watched: 20</li>
+                        <li>Songs Shared: -</li>
                       </ul>
                     </div>
                   </div>

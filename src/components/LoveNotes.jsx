@@ -10,48 +10,35 @@ export default function LoveNotes() {
           <p className="text-2xl font-semibold mb-6 neon-text">My Dearest Love,</p>
 
           <p>
-            As I sit here thinking of you on your special day, my heart overflows with emotions that words can hardly capture.
-            From the moment we met, my life has been painted with colors I never knew existed. 🌈
+            Selamat ulang tahun, Sayang.
           </p>
 
           <p>
-            You are the most beautiful person I know – not just in appearance (though you take my breath away every time I see you),
-            but in your kindness, your laughter, and the way you care for others. Your heart is pure gold. 💛
+            Mungkin aku jarang bilang ini, tapi aku benar-benar menghargai setiap detik dari 523 hari yang sudah kita lewati.
+            Hubungan kita ini bukan hubungan yang sempurna yang tanpa masalah, kita tahu itu.
           </p>
 
           <p>
-            I remember our first date like it was yesterday – the nervous excitement, the way your eyes sparkled when you laughed,
-            and how I knew right then that you were someone special. Little did I know you would become my everything. ✨
+            Kita pernah ada di titik sulit yang bikin lelah, tapi kamu selalu milih buat tetap tinggal dan memperbaiki semuanya bareng aku.
+            Itu yang bikin hubungan ini begitu berarti buatku sekarang.
           </p>
 
           <p>
-            Through all our adventures – the late-night talks, the spontaneous trips, the quiet moments just holding hands –
-            each memory with you is a treasure I hold close to my heart. You make every ordinary moment extraordinary. 🌟
+            Kamu selalu punya cara buat bikin aku ngerasa aman, seaman warna biru yang kamu suka.
+            Semoga di usia barumu ini, langkahmu selalu dipermudah.
           </p>
 
           <p>
-            On your birthday, I want you to know that you are loved beyond measure. I pray that this year brings you all the happiness,
-            success, and beautiful moments you deserve. May all your dreams come true, because seeing you happy is my greatest joy. 🎂
+            Tetaplah jadi manusia unik yang doyan ceker, pencinta kopi pahit, dan penidur yang berisik.
+            Aku menyayangi seluruh paket lengkap yang ada di dalam dirimu.
           </p>
 
           <p>
-            Thank you for being you – for your patience when I'm stubborn, for your understanding when I'm stressed,
-            for your love even when I don't deserve it. You make me want to be a better person every day. 🌱
+            Selamat bertambah usia, doa terbaikku selalu memelukmu.
           </p>
 
-          <p>
-            As we celebrate your 20th year, I look forward to all the memories we'll create together.
-            I promise to cherish you, support you, and love you more with each passing day.
-            No matter what life brings, I'll always be by your side. 🤝
-          </p>
-
-          <p>
-            Happy birthday, my love. Today and always, may you feel how special you are – to me, and to everyone lucky enough to know you.
-            You are my sunshine on cloudy days, my anchor in stormy seas, and my greatest blessing. 🌻
-          </p>
-
-          <p className="text-2xl font-semibold mt-8 neon-text">Forever Yours,</p>
-          <p className="text-xl">Abdul Fatah Al Falaq</p>
+          <p className="text-2xl font-semibold mt-8 neon-text">Dari calon istrimu,</p>
+          <p className="text-xl">Cendrayu</p>
         </div>
 
         {/* Emoji Footer */}

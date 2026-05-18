@@ -15,21 +15,68 @@ import decemberImg from '../assets/images/calendar/december.jpg';
 export default function LoveCalendar() {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const favoritePhotos = [
-    { month: "January", image: januaryImg, description: "pertama kali tukeran jaket 🧥❤️" },
-    { month: "February", image: februaryImg, description: "foto sebelum ujian praktek 📝" },
-    { month: "March", image: marchImg, description: "foto kita sebelum ujian 📚" },
-    { month: "April", image: aprilImg, description: "foto kita sebelum pulang sekolah 🏫" },
-    { month: "May", image: mayImg, description: "foto kamu ketika ulang tahun 🎂🎉" },
-    { month: "June", image: juneImg, description: "lirikan manja 🥰" },
-    { month: "July", image: julyImg, description: "foto lagi sama benji 😒" },
-    { month: "August", image: augustImg, description: "mamam dulu sebelum LDR 😭" },
-    { month: "September", image: septemberImg, description: "pap dari si pinkers 🩷" },
-    { month: "October", image: octoberImg, description: "ceritanya lagi jalan-jalan 🚶‍♂️🚶‍♀️" },
-    { month: "November", image: novemberImg, description: "abis nyoblos gess 🗳️" },
-    { month: "December", image: decemberImg, description: "abis jalan-jalan 🌟" }
-  ];
-
+const favoritePhotos = [
+  { 
+    month: "January", 
+    image: januaryImg, 
+    description: "Dimataku kamu tetap ganteng, in every position. Blue colors always fits on you. Jangan pernah ngerasa jelek ya." 
+  },
+  { 
+    month: "February", 
+    image: februaryImg, 
+    description: "Apapun yang kamu lakukan, selalu berhasil mengambil perhatianku. Jarang aku merasa harus mengangkat kamera untuk mengabadikan momen, tapi ngga buat kamu... aku selalu ingin mengingat seluruh momennya." 
+  },
+  { 
+    month: "March", 
+    image: marchImg, 
+    description: "Tiap dekat kamu, aku ngerasa nyaman-aman-lembut yang jarang aku dapatkan dari siapapun." 
+  },
+  { 
+    month: "April", 
+    image: aprilImg, 
+    description: "Bareng kamu aku ngerasa diutamakan. Dirayakan. Dianggap. Didengar. Dan itu bikin aku ga bisa lepas. Gamau lepas!" 
+  },
+  { 
+    month: "May", 
+    image: mayImg, 
+    description: "Makasih sayang udah mau ngajarin dan bikin aku suka sama ayam. I will never forget you even 2 minutes before i die." 
+  },
+  { 
+    month: "June", 
+    image: juneImg, 
+    description: "Pundakmu lebar, perutmu empuk. Bahagia terus ya selama sama aku." 
+  },
+  { 
+    month: "July", 
+    image: julyImg, 
+    description: "Walaupun banyak luka, kamu tetap mencoba buat menyembuhkanku. Itu yang bikin aku berpikir 1000x buat pergi." 
+  },
+  { 
+    month: "August", 
+    image: augustImg, 
+    description: "Sumpah ini keren banget. Aku yakin kamu bisa jadi dokter yang hebat." 
+  },
+  { 
+    month: "September", 
+    image: septemberImg, 
+    description: "Walaupun kamu suka ngantuk, tapi aku menikmati wajah tenangmu pas tidur." 
+  },
+  { 
+    month: "October", 
+    image: octoberImg, 
+    description: "Gaya khas kita. Udah kaya love languages sendiri." 
+  },
+  { 
+    month: "November", 
+    image: novemberImg, 
+    description: "Tiap sama kamu, aku selalu pengen habisin duitku buat kamu walaupun kehadiran kamu ga akan bisa dihargain dengan apapun. Aku benar-benar bahagia kamu tetap milih aku in every condition." 
+  },
+  { 
+    month: "December", 
+    image: decemberImg, 
+    description: "Teruslah berkembang ya sayang, aku bakal terus dorong kamu menjadi lebih baik. Jangan pernah ngerasa sendiri. Aku disini. Always. Forever." 
+  }
+];
   const handleToggle = (index) => {
     if (activeIndex === index) {
       setActiveIndex(null); // Toggle off

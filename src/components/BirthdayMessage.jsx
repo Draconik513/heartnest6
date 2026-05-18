@@ -23,8 +23,8 @@ const FloatingText = ({ text, delay = 0 }) => {
 export default function BirthdayMessage({ onComplete }) {
   const [step, setStep] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
-  const name = "Francina Elisabeth Rompali Noach";
-  const birthDate = "08 May 2026";
+  const name = "Farid";
+  const birthDate = "18 May 2001";
 
   useEffect(() => {
     const timer = setTimeout(() => {
