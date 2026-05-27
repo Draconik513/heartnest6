@@ -14,68 +14,21 @@ import decemberImg from '../assets/images/calendar/december.jpg';
 
 export default function LoveCalendar() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
 const favoritePhotos = [
-  { 
-    month: "January", 
-    image: januaryImg, 
-    description: "Dimataku kamu tetap ganteng, in every position. Blue colors always fits on you. Jangan pernah ngerasa jelek ya." 
-  },
-  { 
-    month: "February", 
-    image: februaryImg, 
-    description: "Apapun yang kamu lakukan, selalu berhasil mengambil perhatianku. Jarang aku merasa harus mengangkat kamera untuk mengabadikan momen, tapi ngga buat kamu... aku selalu ingin mengingat seluruh momennya." 
-  },
-  { 
-    month: "March", 
-    image: marchImg, 
-    description: "Tiap dekat kamu, aku ngerasa nyaman-aman-lembut yang jarang aku dapatkan dari siapapun." 
-  },
-  { 
-    month: "April", 
-    image: aprilImg, 
-    description: "Bareng kamu aku ngerasa diutamakan. Dirayakan. Dianggap. Didengar. Dan itu bikin aku ga bisa lepas. Gamau lepas!" 
-  },
-  { 
-    month: "May", 
-    image: mayImg, 
-    description: "Makasih sayang udah mau ngajarin dan bikin aku suka sama ayam. I will never forget you even 2 minutes before i die." 
-  },
-  { 
-    month: "June", 
-    image: juneImg, 
-    description: "Pundakmu lebar, perutmu empuk. Bahagia terus ya selama sama aku." 
-  },
-  { 
-    month: "July", 
-    image: julyImg, 
-    description: "Walaupun banyak luka, kamu tetap mencoba buat menyembuhkanku. Itu yang bikin aku berpikir 1000x buat pergi." 
-  },
-  { 
-    month: "August", 
-    image: augustImg, 
-    description: "Sumpah ini keren banget. Aku yakin kamu bisa jadi dokter yang hebat." 
-  },
-  { 
-    month: "September", 
-    image: septemberImg, 
-    description: "Walaupun kamu suka ngantuk, tapi aku menikmati wajah tenangmu pas tidur." 
-  },
-  { 
-    month: "October", 
-    image: octoberImg, 
-    description: "Gaya khas kita. Udah kaya love languages sendiri." 
-  },
-  { 
-    month: "November", 
-    image: novemberImg, 
-    description: "Tiap sama kamu, aku selalu pengen habisin duitku buat kamu walaupun kehadiran kamu ga akan bisa dihargain dengan apapun. Aku benar-benar bahagia kamu tetap milih aku in every condition." 
-  },
-  { 
-    month: "December", 
-    image: decemberImg, 
-    description: "Teruslah berkembang ya sayang, aku bakal terus dorong kamu menjadi lebih baik. Jangan pernah ngerasa sendiri. Aku disini. Always. Forever." 
-  }
+  { month: "January", image: januaryImg },
+  { month: "February", image: februaryImg },
+  { month: "March", image: marchImg },
+  { month: "April", image: aprilImg },
+  { month: "May", image: mayImg },
+  { month: "June", image: juneImg },
+  { month: "July", image: julyImg },
+  { month: "August", image: augustImg },
+  { month: "September", image: septemberImg },
+  { month: "October", image: octoberImg },
+  { month: "November", image: novemberImg },
+  { month: "December", image: decemberImg },
 ];
   const handleToggle = (index) => {
     if (activeIndex === index) {
@@ -94,7 +47,7 @@ const favoritePhotos = [
           <div 
             key={index}
             className={`group relative overflow-hidden rounded-xl shadow-lg hover:shadow-pink-500/30 transition-all duration-300 cursor-pointer`}
-            onClick={() => handleToggle(index)}
+            onClick={() => setSelectedPhoto(photo)}
           >
             <div className="aspect-[4/3] relative">
               <img 
@@ -102,21 +55,7 @@ const favoritePhotos = [
                 alt={photo.month} 
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
-
-              {/* Gradient and description */}
-              <div className={`
-                absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent 
-                flex items-end p-4
-                transition-opacity duration-300
-                ${activeIndex === index ? 'opacity-100' : 'opacity-0'} 
-                group-hover:opacity-100
-              `}>
-                <p className={`text-white transition-transform duration-300 ${activeIndex === index ? 'translate-y-0' : 'translate-y-4'} group-hover:translate-y-0`}>
-                  {photo.description}
-                </p>
-              </div>
-
-              {/* Month label */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute top-0 left-0 bg-pink-700 text-pink-100 px-3 py-1 rounded-br-lg text-sm">
                 {photo.month}
               </div>
@@ -124,6 +63,39 @@ const favoritePhotos = [
           </div>
         ))}
       </div>
+
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div className="relative flex items-center justify-center">
+            {/* Blurred background */}
+            <img
+              src={selectedPhoto.image}
+              alt="blur"
+              className="absolute inset-0 w-full h-full object-cover rounded-xl"
+              style={{ filter: 'blur(16px)', transform: 'scale(1.05)', zIndex: 0 }}
+            />
+            {/* Full photo */}
+            <img
+              src={selectedPhoto.image}
+              alt={selectedPhoto.month}
+              className="relative z-10 max-h-[95vh] max-w-[95vw] w-auto h-auto object-contain rounded-xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+          <button
+            className="absolute top-4 right-4 z-20 text-white text-3xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition"
+            onClick={() => setSelectedPhoto(null)}
+          >
+            ✕
+          </button>
+          <div className="absolute bottom-6 z-20 bg-pink-700 text-pink-100 px-4 py-2 rounded-full text-sm font-semibold">
+            {selectedPhoto.month}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

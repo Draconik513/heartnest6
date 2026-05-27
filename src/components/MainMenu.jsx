@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import Gallery from './Gallery';
 import LoveCalendar from './LoveCalendar';
 import LovePuzzle from './LovePuzzle';
 import LoveNotes from './LoveNotes';
 import MusicPlayer from './MusicPlayer';
-import { FaHome, FaImages, FaCalendarAlt, FaPuzzlePiece, FaHeart, FaMusic } from 'react-icons/fa';
+import { FaHome, FaCalendarAlt, FaPuzzlePiece, FaHeart, FaMusic } from 'react-icons/fa';
 import bgVideo from '../assets/sounds/vidiobackground.mp4';
 import ustogether from '../assets/images/couple2.jpg';
 
@@ -19,7 +18,7 @@ const RelationshipTimer = () => {
   });
 
   useEffect(() => {
-    const startDate = new Date('2024-12-12T00:00:00');
+    const startDate = new Date('2024-12-05T00:00:00');
     const updateTimer = () => {
       const now = new Date();
       const diff = now - startDate;
@@ -67,7 +66,6 @@ export default function MainMenu({ currentPage, setCurrentPage }) {
 
   const menuItems = [
     { id: 'home', icon: <FaHome />, label: 'Home' },
-    { id: 'memories', icon: <FaImages />, label: 'Our Memories' },
     { id: 'calendar', icon: <FaCalendarAlt />, label: 'Love Calendar' },
     { id: 'puzzle', icon: <FaPuzzlePiece />, label: 'Love Puzzle' },
     { id: 'notes', icon: <FaHeart />, label: 'Love Notes' },
@@ -161,32 +159,31 @@ export default function MainMenu({ currentPage, setCurrentPage }) {
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Special Dates</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>First Meet: November 8, 2024</li>
-                        <li>First Date: December 10, 2024</li>
-                        <li>Anniversary: December 12, 2024</li>
+                        <li>First Meet: November 18, 2024</li>
+                        <li>First Date: December 4, 2024</li>
+                        <li>Anniversary: December 5, 2024</li>
                       </ul>
                     </div>
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Our Places</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>Favorite Cafe: Kopi Kenangan</li>
-                        <li>Favorite Park: -</li>
-                        <li>Favorite Restaurant: Ayce Sushi</li>
+                        <li>Favorite Cafe: PH</li>
+                        <li>Favorite Park: Lawe Waterfall</li>
+                        <li>Favorite Restaurant: PH</li>
                       </ul>
                     </div>
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Memories</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>Trips Together: 5 cities</li>
-                        <li>Movies Watched: 20</li>
-                        <li>Songs Shared: -</li>
+                        <li>Trips Together: Banyak</li>
+                        <li>Movies Watched: Banyak</li>
+                        <li>Songs Shared: Banyak</li>
                       </ul>
                     </div>
                   </div>
                 </div>
               )}
 
-              {currentPage === 'memories' && <Gallery />}
               {currentPage === 'calendar' && <LoveCalendar />}
               {currentPage === 'puzzle' && <LovePuzzle />}
               {currentPage === 'notes' && <LoveNotes />}

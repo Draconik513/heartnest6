@@ -7,38 +7,26 @@ export default function LoveNotes() {
 
       <div className="bg-pink-900 bg-opacity-60 backdrop-blur-md rounded-3xl p-6 sm:p-10 shadow-2xl border border-pink-500/30 relative overflow-hidden">
         <div className="prose prose-pink prose-lg text-pink-100 max-w-none">
-          <p className="text-2xl font-semibold mb-6 neon-text">My Dearest Love,</p>
+          <p className="text-2xl font-semibold mb-6 neon-text">My Baby Huey Kesayangan,</p>
 
           <p>
-            Selamat ulang tahun, Sayang.
+            Happy Birthday My Baby Huey kesayangan aku.
           </p>
 
           <p>
-            Mungkin aku jarang bilang ini, tapi aku benar-benar menghargai setiap detik dari 523 hari yang sudah kita lewati.
-            Hubungan kita ini bukan hubungan yang sempurna yang tanpa masalah, kita tahu itu.
+            Di hari ulang tahun Sayang adalah hari dimana kita telah merayakan hal serupa berulang kali.
           </p>
 
           <p>
-            Kita pernah ada di titik sulit yang bikin lelah, tapi kamu selalu milih buat tetap tinggal dan memperbaiki semuanya bareng aku.
-            Itu yang bikin hubungan ini begitu berarti buatku sekarang.
+            Doaku selalu sama, semoga Sayang selalu dilimpahkan kebaikan, kesehatan, kebijaksanaan, kelembutan dan rejeki yang melimpah.!
           </p>
 
           <p>
-            Kamu selalu punya cara buat bikin aku ngerasa aman, seaman warna biru yang kamu suka.
-            Semoga di usia barumu ini, langkahmu selalu dipermudah.
+            Love u more and more sayang.......
           </p>
 
-          <p>
-            Tetaplah jadi manusia unik yang doyan ceker, pencinta kopi pahit, dan penidur yang berisik.
-            Aku menyayangi seluruh paket lengkap yang ada di dalam dirimu.
-          </p>
-
-          <p>
-            Selamat bertambah usia, doa terbaikku selalu memelukmu.
-          </p>
-
-          <p className="text-2xl font-semibold mt-8 neon-text">Dari calon istrimu,</p>
-          <p className="text-xl">Cendrayu</p>
+          <p className="text-2xl font-semibold mt-8 neon-text">Dari yang selalu mencintaimu,</p>
+          <p className="text-xl">❤️</p>
         </div>
 
         {/* Emoji Footer */}

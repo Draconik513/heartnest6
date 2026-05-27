@@ -5,24 +5,24 @@ import { useState } from "react";
 const songs = [
   {
     id: 1,
-    title: "Risk It All",
-    artist: "Bruno Mars",
+    title: "Shape of My Heart",
+    artist: "Backstreet Boys",
     embedUrl:
-      "https://open.spotify.com/embed/track/5y2ijHECwFYWqcAHKTZgzD?utm_source=generator",
+      "https://open.spotify.com/embed/track/35o9a4iAfLl5jRmqMX9c1D?utm_source=generator",
   },
   {
     id: 2,
-    title: "My All",
-    artist: "Mariah Carey",
+    title: "Risk It All",
+    artist: "Bruno Mars",
     embedUrl:
-      "https://open.spotify.com/embed/track/3RSpK5Y0y5tl25qvssrwJ6?utm_source=generator",
+      "https://open.spotify.com/embed/track/6XmpBgYhST9eE5ykwqHDfA?utm_source=generator",
   },
   {
     id: 3,
-    title: "Mencintaimu",
-    artist: "Mahalini",
+    title: "Hati-Hati di Jalan",
+    artist: "Tulus",
     embedUrl:
-      "https://open.spotify.com/embed/track/2gsRMFzelZuRQo8r11RsLr?utm_source=generator",
+      "https://open.spotify.com/embed/track/2hHeGD57S0BcopfVcmehdl?utm_source=generator",
   },
 ];
 
