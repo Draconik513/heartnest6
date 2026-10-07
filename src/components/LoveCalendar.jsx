@@ -16,25 +16,26 @@ export default function LoveCalendar() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-const favoritePhotos = [
-  { month: "January", image: januaryImg, desc: "Our first date, senang banget sayang selalu kasi effort yang terbaik buat aku🥹❤️" },
-  { month: "February", image: februaryImg, desc: "Seneng banget sayang😍 diam-diam sayang kenalin aku ke semua orang 🥹" },
-  { month: "March", image: marchImg, desc: "Sayang pacarku, sahatku, dan aku harap sayang orang yang jadi teman seumur hidupku💝😇" },
-  { month: "April", image: aprilImg, desc: "Sayang ayo saling menjaga sampai hari pernikahan itu tiba ya🫂🤗" },
-  { month: "May", image: mayImg, desc: "Sayang ayo saling belajar dan bertumbuh untuk satu sama lain ya🥹🌏" },
-  { month: "June", image: juneImg, desc: "Sayang ayo saling berbagi dalam segala hal, baik suka maupun duka🫶✨" },
-  { month: "July", image: julyImg, desc: "Sayang ayo jadi tameng satu sama lain🧄🛡️" },
-  { month: "August", image: augustImg, desc: "Sayang ayoo terus ajak aku melangkahkan, kemanapun sayang pergi👩‍❤️‍👨" },
-  { month: "September", image: septemberImg, desc: "Sayang sehat-sehat terus yaa🥹" },
-  { month: "October", image: octoberImg, desc: "Sayangggg semangat terus yaa🥹 murah rezeki sayang ya🤲😇" },
-  { month: "November", image: novemberImg, desc: "Terus jadi pria yang hangat ya sayang💕💝" },
-  { month: "December", image: decemberImg, desc: "I love you full sayang❤️🌏" },
-];
+  const favoritePhotos = [
+    { month: "🌸", image: januaryImg, desc: "Our first date, senang banget sayang selalu kasi effort yang terbaik buat aku🥹❤️" },
+    { month: "💝", image: februaryImg, desc: "Seneng banget sayang😍 diam-diam sayang kenalin aku ke semua orang 🥹" },
+    { month: "🌿", image: marchImg, desc: "Sayang pacarku, sahatku, dan aku harap sayang orang yang jadi teman seumur hidupku💝😇" },
+    { month: "🌷", image: aprilImg, desc: "Sayang ayo saling menjaga sampai hari pernikahan itu tiba ya🫂🤗" },
+    { month: "🌻", image: mayImg, desc: "Sayang ayo saling belajar dan bertumbuh untuk satu sama lain ya🥹🌏" },
+    { month: "☀️", image: juneImg, desc: "Sayang ayo saling berbagi dalam segala hal, baik suka maupun duka🫶✨" },
+    { month: "🌊", image: julyImg, desc: "Sayang ayo jadi tameng satu sama lain🧄🛡️" },
+    { month: "🌙", image: augustImg, desc: "Sayang ayoo terus ajak aku melangkahkan, kemanapun sayang pergi👩❤️👨" },
+    { month: "🍂", image: septemberImg, desc: "Sayang sehat-sehat terus yaa🥹" },
+    { month: "🎃", image: octoberImg, desc: "Sayangggg semangat terus yaa🥹 murah rezeki sayang ya🤲😇" },
+    { month: "🍁", image: novemberImg, desc: "Terus jadi pria yang hangat ya sayang💕💝" },
+    { month: "❄️", image: decemberImg, desc: "I love you full sayang❤️🌏" },
+  ];
+
   const handleToggle = (index) => {
     if (activeIndex === index) {
-      setActiveIndex(null); // Toggle off
+      setActiveIndex(null);
     } else {
-      setActiveIndex(index); // Set as active
+      setActiveIndex(index);
     }
   };
 
@@ -44,15 +45,15 @@ const favoritePhotos = [
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {favoritePhotos.map((photo, index) => (
-          <div 
+          <div
             key={index}
-            className={`group relative overflow-hidden rounded-xl shadow-lg hover:shadow-pink-500/30 transition-all duration-300 cursor-pointer`}
+            className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-pink-500/30 transition-all duration-300 cursor-pointer"
             onClick={() => setSelectedPhoto(photo)}
           >
             <div className="aspect-[4/3] relative">
-              <img 
-                src={photo.image} 
-                alt={photo.month} 
+              <img
+                src={photo.image}
+                alt={photo.month}
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -75,14 +76,12 @@ const favoritePhotos = [
           onClick={() => setSelectedPhoto(null)}
         >
           <div className="relative flex items-center justify-center">
-            {/* Blurred background */}
             <img
               src={selectedPhoto.image}
               alt="blur"
               className="absolute inset-0 w-full h-full object-cover rounded-xl"
               style={{ filter: 'blur(16px)', transform: 'scale(1.05)', zIndex: 0 }}
             />
-            {/* Full photo */}
             <img
               src={selectedPhoto.image}
               alt={selectedPhoto.month}
@@ -106,4 +105,3 @@ const favoritePhotos = [
     </div>
   );
 }
-

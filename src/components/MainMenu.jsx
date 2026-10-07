@@ -166,8 +166,8 @@ export default function MainMenu({ currentPage, setCurrentPage }) {
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Special Dates</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>First Meet: July 19, 2026</li>
-                        <li>First Date: July 10, 2026</li>
+                        <li>First Meet: July 10, 2026</li>
+                        <li>First Date: July 19, 2026</li>
                         <li>Anniversary: July 5, 2026</li>
                       </ul>
                     </div>
