@@ -17,18 +17,18 @@ export default function LoveCalendar() {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
 const favoritePhotos = [
-  { month: "January", image: januaryImg },
-  { month: "February", image: februaryImg },
-  { month: "March", image: marchImg },
-  { month: "April", image: aprilImg },
-  { month: "May", image: mayImg },
-  { month: "June", image: juneImg },
-  { month: "July", image: julyImg },
-  { month: "August", image: augustImg },
-  { month: "September", image: septemberImg },
-  { month: "October", image: octoberImg },
-  { month: "November", image: novemberImg },
-  { month: "December", image: decemberImg },
+  { month: "January", image: januaryImg, desc: "Our first date, senang banget sayang selalu kasi effort yang terbaik buat aku🥹❤️" },
+  { month: "February", image: februaryImg, desc: "Seneng banget sayang😍 diam-diam sayang kenalin aku ke semua orang 🥹" },
+  { month: "March", image: marchImg, desc: "Sayang pacarku, sahatku, dan aku harap sayang orang yang jadi teman seumur hidupku💝😇" },
+  { month: "April", image: aprilImg, desc: "Sayang ayo saling menjaga sampai hari pernikahan itu tiba ya🫂🤗" },
+  { month: "May", image: mayImg, desc: "Sayang ayo saling belajar dan bertumbuh untuk satu sama lain ya🥹🌏" },
+  { month: "June", image: juneImg, desc: "Sayang ayo saling berbagi dalam segala hal, baik suka maupun duka🫶✨" },
+  { month: "July", image: julyImg, desc: "Sayang ayo jadi tameng satu sama lain🧄🛡️" },
+  { month: "August", image: augustImg, desc: "Sayang ayoo terus ajak aku melangkahkan, kemanapun sayang pergi👩‍❤️‍👨" },
+  { month: "September", image: septemberImg, desc: "Sayang sehat-sehat terus yaa🥹" },
+  { month: "October", image: octoberImg, desc: "Sayangggg semangat terus yaa🥹 murah rezeki sayang ya🤲😇" },
+  { month: "November", image: novemberImg, desc: "Terus jadi pria yang hangat ya sayang💕💝" },
+  { month: "December", image: decemberImg, desc: "I love you full sayang❤️🌏" },
 ];
   const handleToggle = (index) => {
     if (activeIndex === index) {
@@ -59,6 +59,11 @@ const favoritePhotos = [
               <div className="absolute top-0 left-0 bg-pink-700 text-pink-100 px-3 py-1 rounded-br-lg text-sm">
                 {photo.month}
               </div>
+              {photo.desc && (
+                <div className="absolute bottom-0 left-0 right-0 px-3 py-2 text-white text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-60">
+                  {photo.desc}
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -91,8 +96,10 @@ const favoritePhotos = [
           >
             ✕
           </button>
-          <div className="absolute bottom-6 z-20 bg-pink-700 text-pink-100 px-4 py-2 rounded-full text-sm font-semibold">
-            {selectedPhoto.month}
+          <div className="absolute bottom-6 z-20 flex flex-col items-center gap-2 px-4 max-w-lg text-center">
+            <div className="bg-pink-700 text-pink-100 px-4 py-2 rounded-full text-sm font-semibold">
+              {selectedPhoto.month}
+            </div>
           </div>
         </div>
       )}

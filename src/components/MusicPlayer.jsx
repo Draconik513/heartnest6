@@ -1,69 +1,64 @@
-// src/components/MusicPlayer.jsx
-import { useState } from "react";
+import { useState, useRef } from "react";
+import song1 from "../assets/sounds/song1.mp3";
+import song1Img from "../assets/sounds/song1.jpg";
 
-// Data lagu dengan Spotify Embed (iframe)
 const songs = [
   {
     id: 1,
-    title: "Shape of My Heart",
-    artist: "Backstreet Boys",
-    embedUrl:
-      "https://open.spotify.com/embed/track/35o9a4iAfLl5jRmqMX9c1D?utm_source=generator",
-  },
-  {
-    id: 2,
-    title: "Risk It All",
-    artist: "Bruno Mars",
-    embedUrl:
-      "https://open.spotify.com/embed/track/6XmpBgYhST9eE5ykwqHDfA?utm_source=generator",
-  },
-  {
-    id: 3,
-    title: "Hati-Hati di Jalan",
-    artist: "Tulus",
-    embedUrl:
-      "https://open.spotify.com/embed/track/2hHeGD57S0BcopfVcmehdl?utm_source=generator",
+    title: "I Lay My Love on You",
+    artist: "Westlife",
+    src: song1,
+    image: song1Img,
   },
 ];
 
 export default function MusicPlayer() {
   const [currentSong, setCurrentSong] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   const handleNext = () => {
+    audioRef.current.pause();
+    setIsPlaying(false);
     setCurrentSong((prev) => (prev + 1) % songs.length);
   };
 
   const handlePrev = () => {
+    audioRef.current.pause();
+    setIsPlaying(false);
     setCurrentSong((prev) => (prev - 1 + songs.length) % songs.length);
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] p-6 bg-gradient-to-br from-pink-900 via-pink-800 to-pink-700 rounded-3xl shadow-2xl border border-pink-400/30 relative overflow-hidden">
-      {/* Konten utama */}
       <div className="relative z-10 w-full max-w-sm bg-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-lg">
-        <h1 className="text-2xl font-bold text-pink-100 mb-4 text-center">
-          Our Special Songs
-        </h1>
+        <h1 className="text-2xl font-bold text-pink-100 mb-4 text-center">Our Special Songs</h1>
 
-        {/* Spotify Iframe Player */}
         <div className="flex flex-col items-center mb-6 w-full">
-          <iframe
-            src={songs[currentSong].embedUrl}
-            width="100%"
-            height="152"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            className="rounded-xl shadow-md border border-pink-400"
-          ></iframe>
+          <img
+            src={songs[currentSong].image}
+            alt={songs[currentSong].title}
+            className="w-48 h-48 object-cover rounded-xl shadow-md border border-pink-400 mb-4"
+          />
+          <h2 className="text-xl font-semibold text-pink-100">{songs[currentSong].title}</h2>
+          <p className="text-sm text-pink-300 mb-4">{songs[currentSong].artist}</p>
 
-          <h2 className="text-xl font-semibold text-pink-100 mt-4">
-            {songs[currentSong].title}
-          </h2>
-          <p className="text-sm text-pink-300">{songs[currentSong].artist}</p>
+          <audio
+            ref={audioRef}
+            src={songs[currentSong].src}
+            onEnded={() => setIsPlaying(false)}
+          />
         </div>
 
-        {/* Tombol kontrol */}
         <div className="flex items-center justify-center gap-6 mb-2">
           <button
             onClick={handlePrev}
@@ -71,7 +66,12 @@ export default function MusicPlayer() {
           >
             ◀
           </button>
-
+          <button
+            onClick={togglePlay}
+            className="w-14 h-14 bg-pink-500 hover:bg-pink-400 rounded-full flex items-center justify-center text-white text-2xl shadow-md transition-all"
+          >
+            {isPlaying ? "⏸" : "▶"}
+          </button>
           <button
             onClick={handleNext}
             className="w-10 h-10 bg-pink-500 hover:bg-pink-400 rounded-full flex items-center justify-center text-white text-lg shadow-md transition-all"
@@ -79,10 +79,6 @@ export default function MusicPlayer() {
             ▶
           </button>
         </div>
-
-        <p className="text-sm text-center text-pink-300 mt-2">
-          Player resmi Spotify, jadi langsung bisa diputar aman 🎧
-        </p>
       </div>
     </div>
   );

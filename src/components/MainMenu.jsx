@@ -16,12 +16,14 @@ const RelationshipTimer = () => {
     minutes: 0,
     seconds: 0
   });
+  const [isFuture, setIsFuture] = useState(false);
 
   useEffect(() => {
-    const startDate = new Date('2024-12-05T00:00:00');
+    const startDate = new Date('2026-07-05T00:00:00');
     const updateTimer = () => {
       const now = new Date();
-      const diff = now - startDate;
+      const diff = Math.abs(now - startDate);
+      setIsFuture(now < startDate);
 
       const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
       const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
@@ -39,14 +41,19 @@ const RelationshipTimer = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-      {Object.entries(duration).map(([unit, value]) => (
-        <div key={unit} className="bg-pink-800 bg-opacity-10 p-4 rounded-lg text-center">
-          <div className="text-3xl font-bold text-pink-200">{Math.floor(value)}</div>
-          <div className="text-sm text-pink-300 uppercase">{unit}</div>
-        </div>
-      ))}
-    </div>
+    <>
+      <p className="text-pink-300 text-sm mb-2">
+        {isFuture ? '⏳ Countdown to our anniversary' : '❤️ Together for'}
+      </p>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
+        {Object.entries(duration).map(([unit, value]) => (
+          <div key={unit} className="bg-pink-800 bg-opacity-10 p-4 rounded-lg text-center">
+            <div className="text-3xl font-bold text-pink-200">{value}</div>
+            <div className="text-sm text-pink-300 uppercase">{unit}</div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
@@ -159,25 +166,25 @@ export default function MainMenu({ currentPage, setCurrentPage }) {
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
                       <h3 className="text-xl font-semibold text-pink-200 mb-2">Special Dates</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>First Meet: November 18, 2024</li>
-                        <li>First Date: December 4, 2024</li>
-                        <li>Anniversary: December 5, 2024</li>
+                        <li>First Meet: July 19, 2026</li>
+                        <li>First Date: July 10, 2026</li>
+                        <li>Anniversary: July 5, 2026</li>
                       </ul>
                     </div>
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
-                      <h3 className="text-xl font-semibold text-pink-200 mb-2">Our Places</h3>
+                      <h3 className="text-xl font-semibold text-pink-200 mb-2">📌 Favorit</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>Favorite Cafe: PH</li>
-                        <li>Favorite Park: Lawe Waterfall</li>
-                        <li>Favorite Restaurant: PH</li>
+                        <li>Cafe Favorit: -</li>
+                        <li>Taman Favorit: -</li>
+                        <li>Restoran Favorit: -</li>
                       </ul>
                     </div>
                     <div className="bg-pink-800 bg-opacity-10 p-4 rounded-xl border border-pink-400 border-opacity-30">
-                      <h3 className="text-xl font-semibold text-pink-200 mb-2">Memories</h3>
+                      <h3 className="text-xl font-semibold text-pink-200 mb-2">📌 Aktivitas Berdua</h3>
                       <ul className="text-pink-300 space-y-2">
-                        <li>Trips Together: Banyak</li>
-                        <li>Movies Watched: Banyak</li>
-                        <li>Songs Shared: Banyak</li>
+                        <li>Jumlah Trip: -</li>
+                        <li>Jumlah Film Ditonton: -</li>
+                        <li>Jumlah Lagu Dibagikan: -</li>
                       </ul>
                     </div>
                   </div>

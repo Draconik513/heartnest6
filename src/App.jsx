@@ -11,7 +11,7 @@ export default function App() {
   const [showBirthday, setShowBirthday] = useState(false);
   const [currentPage, setCurrentPage] = useState("home");
 
-  const correctPassword = "mybabyhuey";
+  const correctPassword = "Kejutan heartnest ulang tahun";
 
   const handleUnlock = () => {
     setShowCountdown(true);

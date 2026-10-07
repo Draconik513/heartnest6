@@ -2,7 +2,6 @@ import { useState } from 'react';
 import confetti from 'canvas-confetti';
 import complete from '../assets/images/completed.jpg';
 
-// Import 20 potongan puzzle
 import puzzle1 from '../assets/images/puzzle/puzzle-1.jpg';
 import puzzle2 from '../assets/images/puzzle/puzzle-2.jpg';
 import puzzle3 from '../assets/images/puzzle/puzzle-3.jpg';
@@ -23,29 +22,20 @@ import puzzle17 from '../assets/images/puzzle/puzzle-17.jpg';
 import puzzle18 from '../assets/images/puzzle/puzzle-18.jpg';
 import puzzle19 from '../assets/images/puzzle/puzzle-19.jpg';
 import puzzle20 from '../assets/images/puzzle/puzzle-20.jpg';
+import puzzle21 from '../assets/images/puzzle/puzzle-21.jpg';
+import puzzle22 from '../assets/images/puzzle/puzzle-22.jpg';
+import puzzle23 from '../assets/images/puzzle/puzzle-23.jpg';
+import puzzle24 from '../assets/images/puzzle/puzzle-24.jpg';
+import puzzle25 from '../assets/images/puzzle/puzzle-25.jpg';
+import puzzle26 from '../assets/images/puzzle/puzzle-26.jpg';
+import puzzle27 from '../assets/images/puzzle/puzzle-27.jpg';
+import puzzle28 from '../assets/images/puzzle/puzzle-28.jpg';
 
-const heartPieces = [
-  { id: 1, correctPosition: 1, image: puzzle1 },
-  { id: 2, correctPosition: 2, image: puzzle2 },
-  { id: 3, correctPosition: 3, image: puzzle3 },
-  { id: 4, correctPosition: 4, image: puzzle4 },
-  { id: 5, correctPosition: 5, image: puzzle5 },
-  { id: 6, correctPosition: 6, image: puzzle6 },
-  { id: 7, correctPosition: 7, image: puzzle7 },
-  { id: 8, correctPosition: 8, image: puzzle8 },
-  { id: 9, correctPosition: 9, image: puzzle9 },
-  { id: 10, correctPosition: 10, image: puzzle10 },
-  { id: 11, correctPosition: 11, image: puzzle11 },
-  { id: 12, correctPosition: 12, image: puzzle12 },
-  { id: 13, correctPosition: 13, image: puzzle13 },
-  { id: 14, correctPosition: 14, image: puzzle14 },
-  { id: 15, correctPosition: 15, image: puzzle15 },
-  { id: 16, correctPosition: 16, image: puzzle16 },
-  { id: 17, correctPosition: 17, image: puzzle17 },
-  { id: 18, correctPosition: 18, image: puzzle18 },
-  { id: 19, correctPosition: 19, image: puzzle19 },
-  { id: 20, correctPosition: 20, image: puzzle20 },
-];
+const heartPieces = Array.from({ length: 28 }, (_, i) => ({
+  id: i + 1,
+  correctPosition: i + 1,
+  image: [puzzle1,puzzle2,puzzle3,puzzle4,puzzle5,puzzle6,puzzle7,puzzle8,puzzle9,puzzle10,puzzle11,puzzle12,puzzle13,puzzle14,puzzle15,puzzle16,puzzle17,puzzle18,puzzle19,puzzle20,puzzle21,puzzle22,puzzle23,puzzle24,puzzle25,puzzle26,puzzle27,puzzle28][i]
+}));
 
 export default function LovePuzzle() {
   const [pieces, setPieces] = useState(
@@ -110,7 +100,7 @@ export default function LovePuzzle() {
         {/* Puzzle Grid */}
         <div className="w-full lg:w-auto">
           <div className="grid grid-cols-4 gap-1 sm:gap-2 bg-pink-900/40 p-2 sm:p-3 rounded-xl">
-            {[...Array(20)].map((_, i) => {
+            {[...Array(28)].map((_, i) => {
               const position = i + 1;
               const piece = pieces.find(p => p.position === position);
 
